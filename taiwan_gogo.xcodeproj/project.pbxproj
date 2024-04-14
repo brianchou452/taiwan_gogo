@@ -20,6 +20,10 @@
 		72024DE12BCA916F0032F6C0 /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD82BCA916F0032F6C0 /* JSONSchemaSupport.swift */; };
 		72024DE22BCA916F0032F6C0 /* MOTCAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD92BCA916F0032F6C0 /* MOTCAttraction.swift */; };
 		72024DE32BCA916F0032F6C0 /* MOTCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DDA2BCA916F0032F6C0 /* MOTCImage.swift */; };
+		72024DEA2BCBB1380032F6C0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 72024DE92BCBB1380032F6C0 /* Kingfisher */; };
+		72024DEC2BCBDF640032F6C0 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DEB2BCBDF640032F6C0 /* SearchBarView.swift */; };
+		72024DEE2BCBF88E0032F6C0 /* AttractionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DED2BCBF88E0032F6C0 /* AttractionDetailView.swift */; };
+		72024DF02BCC16640032F6C0 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DEF2BCC16640032F6C0 /* RemoteImageView.swift */; };
 		72DC55B32BC96AF90038C24A /* taiwan_gogoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */; };
 		72DC55B52BC96AF90038C24A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC55B42BC96AF90038C24A /* ContentView.swift */; };
 		72DC55B92BC96AFB0038C24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DC55B82BC96AFB0038C24A /* Assets.xcassets */; };
@@ -63,6 +67,9 @@
 		72024DD82BCA916F0032F6C0 /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
 		72024DD92BCA916F0032F6C0 /* MOTCAttraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCAttraction.swift; sourceTree = "<group>"; };
 		72024DDA2BCA916F0032F6C0 /* MOTCImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCImage.swift; sourceTree = "<group>"; };
+		72024DEB2BCBDF640032F6C0 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		72024DED2BCBF88E0032F6C0 /* AttractionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailView.swift; sourceTree = "<group>"; };
+		72024DEF2BCC16640032F6C0 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		72DC55AF2BC96AF90038C24A /* taiwan_gogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taiwan_gogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taiwan_gogoApp.swift; sourceTree = "<group>"; };
 		72DC55B42BC96AF90038C24A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72024DEA2BCBB1380032F6C0 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,9 @@
 			children = (
 				72DC55E22BC993E50038C24A /* ExploreView.swift */,
 				72024D872BCA52230032F6C0 /* AttractionListView.swift */,
+				72024DEB2BCBDF640032F6C0 /* SearchBarView.swift */,
+				72024DED2BCBF88E0032F6C0 /* AttractionDetailView.swift */,
+				72024DEF2BCC16640032F6C0 /* RemoteImageView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 			);
 			name = taiwan_gogo;
 			packageProductDependencies = (
+				72024DE92BCBB1380032F6C0 /* Kingfisher */,
 			);
 			productName = taiwan_gogo;
 			productReference = 72DC55AF2BC96AF90038C24A /* taiwan_gogo.app */;
@@ -306,6 +318,7 @@
 			);
 			mainGroup = 72DC55A62BC96AF90038C24A;
 			packageReferences = (
+				72024DE82BCBB1370032F6C0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 72DC55B02BC96AF90038C24A /* Products */;
 			projectDirPath = "";
@@ -360,12 +373,15 @@
 				72024DE02BCA916F0032F6C0 /* MOTCOrganization.swift in Sources */,
 				72024DDE2BCA916F0032F6C0 /* MOTCTelephone.swift in Sources */,
 				72DC55E52BC993FC0038C24A /* JourneyView.swift in Sources */,
+				72024DEC2BCBDF640032F6C0 /* SearchBarView.swift in Sources */,
 				72024DDC2BCA916F0032F6C0 /* MOTCAttractionResponse.swift in Sources */,
 				72DC55B32BC96AF90038C24A /* taiwan_gogoApp.swift in Sources */,
 				72024DE22BCA916F0032F6C0 /* MOTCAttraction.swift in Sources */,
+				72024DEE2BCBF88E0032F6C0 /* AttractionDetailView.swift in Sources */,
 				72024DDD2BCA916F0032F6C0 /* MOTCPostalAddress.swift in Sources */,
 				72024D862BCA4E970032F6C0 /* SharedViewModel.swift in Sources */,
 				72024DDF2BCA916F0032F6C0 /* MOTCSocialMediaURL.swift in Sources */,
+				72024DF02BCC16640032F6C0 /* RemoteImageView.swift in Sources */,
 				72024DDB2BCA916F0032F6C0 /* MOTCLocatedCity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,6 +712,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72024DE82BCBB1370032F6C0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72024DE92BCBB1380032F6C0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72024DE82BCBB1370032F6C0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72DC55A72BC96AF90038C24A /* Project object */;
 }

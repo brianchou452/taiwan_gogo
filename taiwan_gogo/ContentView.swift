@@ -38,29 +38,24 @@ struct ContentView: View {
         .onChange(of: selectedTab) {
             print("selected tab \(selectedTab)")
         }
-        .onAppear {
-            viewModel.getAttractions()
-        }
         .sheet(isPresented: $showSheet) {
-            switch selectedTab {
-            case 1:
-                AttractionListView()
-                    .environmentObject(viewModel)
-                    .presentationDetents([.height(60), .medium, .large])
-                    .presentationCornerRadius(20)
-                    .presentationBackgroundInteraction(.enabled)
-                    .interactiveDismissDisabled()
-                    .bottomMaskForSheet()
-            case 2:
-                Text("sheet \(selectedTab)")
-                    .presentationDetents([.height(60), .medium, .large])
-                    .presentationCornerRadius(20)
-                    .presentationBackgroundInteraction(.enabled)
-                    .interactiveDismissDisabled()
-                    .bottomMaskForSheet()
-            default:
-                Text("Error")
+            VStack(alignment: .leading) {
+                switch selectedTab {
+                case 1:
+                    AttractionListView()
+                        .environmentObject(viewModel)
+                case 2:
+                    Text("sheet \(selectedTab)")
+
+                default:
+                    Text("Error")
+                }
             }
+            .presentationDetents([.height(60), .medium, .large])
+            .presentationCornerRadius(20)
+            .presentationBackgroundInteraction(.enabled)
+            .interactiveDismissDisabled()
+            .bottomMaskForSheet()
         }
     }
 }

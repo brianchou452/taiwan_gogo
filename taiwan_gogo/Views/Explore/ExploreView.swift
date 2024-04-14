@@ -27,6 +27,9 @@ struct ExploreView: View {
             MapUserLocationButton()
             MapPitchToggle()
         }
+        .onAppear {
+            viewModel.getAttractions()
+        }
         .onMapCameraChange { context in
             viewModel.visibleRegion = context.region
             viewModel.updateAttractionsWithUserLocation()
