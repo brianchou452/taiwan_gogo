@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72024D862BCA4E970032F6C0 /* SharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024D852BCA4E970032F6C0 /* SharedViewModel.swift */; };
+		72024D882BCA52230032F6C0 /* AttractionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024D872BCA52230032F6C0 /* AttractionListView.swift */; };
+		72024DCF2BCA5FB40032F6C0 /* AttractionList.json in Resources */ = {isa = PBXBuildFile; fileRef = 72024DCE2BCA5FB40032F6C0 /* AttractionList.json */; };
+		72024DD12BCA610F0032F6C0 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD02BCA610F0032F6C0 /* PreviewData.swift */; };
+		72024DDB2BCA916F0032F6C0 /* MOTCLocatedCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD22BCA916E0032F6C0 /* MOTCLocatedCity.swift */; };
+		72024DDC2BCA916F0032F6C0 /* MOTCAttractionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD32BCA916E0032F6C0 /* MOTCAttractionResponse.swift */; };
+		72024DDD2BCA916F0032F6C0 /* MOTCPostalAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD42BCA916E0032F6C0 /* MOTCPostalAddress.swift */; };
+		72024DDE2BCA916F0032F6C0 /* MOTCTelephone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD52BCA916F0032F6C0 /* MOTCTelephone.swift */; };
+		72024DDF2BCA916F0032F6C0 /* MOTCSocialMediaURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD62BCA916F0032F6C0 /* MOTCSocialMediaURL.swift */; };
+		72024DE02BCA916F0032F6C0 /* MOTCOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD72BCA916F0032F6C0 /* MOTCOrganization.swift */; };
+		72024DE12BCA916F0032F6C0 /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD82BCA916F0032F6C0 /* JSONSchemaSupport.swift */; };
+		72024DE22BCA916F0032F6C0 /* MOTCAttraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DD92BCA916F0032F6C0 /* MOTCAttraction.swift */; };
+		72024DE32BCA916F0032F6C0 /* MOTCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024DDA2BCA916F0032F6C0 /* MOTCImage.swift */; };
 		72DC55B32BC96AF90038C24A /* taiwan_gogoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */; };
 		72DC55B52BC96AF90038C24A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC55B42BC96AF90038C24A /* ContentView.swift */; };
 		72DC55B92BC96AFB0038C24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DC55B82BC96AFB0038C24A /* Assets.xcassets */; };
@@ -37,6 +50,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72024D852BCA4E970032F6C0 /* SharedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewModel.swift; sourceTree = "<group>"; };
+		72024D872BCA52230032F6C0 /* AttractionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionListView.swift; sourceTree = "<group>"; };
+		72024DCE2BCA5FB40032F6C0 /* AttractionList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AttractionList.json; sourceTree = "<group>"; };
+		72024DD02BCA610F0032F6C0 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		72024DD22BCA916E0032F6C0 /* MOTCLocatedCity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCLocatedCity.swift; sourceTree = "<group>"; };
+		72024DD32BCA916E0032F6C0 /* MOTCAttractionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCAttractionResponse.swift; sourceTree = "<group>"; };
+		72024DD42BCA916E0032F6C0 /* MOTCPostalAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCPostalAddress.swift; sourceTree = "<group>"; };
+		72024DD52BCA916F0032F6C0 /* MOTCTelephone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCTelephone.swift; sourceTree = "<group>"; };
+		72024DD62BCA916F0032F6C0 /* MOTCSocialMediaURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCSocialMediaURL.swift; sourceTree = "<group>"; };
+		72024DD72BCA916F0032F6C0 /* MOTCOrganization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCOrganization.swift; sourceTree = "<group>"; };
+		72024DD82BCA916F0032F6C0 /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
+		72024DD92BCA916F0032F6C0 /* MOTCAttraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCAttraction.swift; sourceTree = "<group>"; };
+		72024DDA2BCA916F0032F6C0 /* MOTCImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCImage.swift; sourceTree = "<group>"; };
 		72DC55AF2BC96AF90038C24A /* taiwan_gogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taiwan_gogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taiwan_gogoApp.swift; sourceTree = "<group>"; };
 		72DC55B42BC96AF90038C24A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72024D682BCA3A370032F6C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72024DD92BCA916F0032F6C0 /* MOTCAttraction.swift */,
+				72024DD32BCA916E0032F6C0 /* MOTCAttractionResponse.swift */,
+				72024DDA2BCA916F0032F6C0 /* MOTCImage.swift */,
+				72024DD22BCA916E0032F6C0 /* MOTCLocatedCity.swift */,
+				72024DD72BCA916F0032F6C0 /* MOTCOrganization.swift */,
+				72024DD42BCA916E0032F6C0 /* MOTCPostalAddress.swift */,
+				72024DD62BCA916F0032F6C0 /* MOTCSocialMediaURL.swift */,
+				72024DD52BCA916F0032F6C0 /* MOTCTelephone.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		72DC55A62BC96AF90038C24A = {
 			isa = PBXGroup;
 			children = (
@@ -100,10 +141,12 @@
 		72DC55B12BC96AF90038C24A /* taiwan_gogo */ = {
 			isa = PBXGroup;
 			children = (
+				72024D682BCA3A370032F6C0 /* Models */,
 				72DC55DF2BC992AC0038C24A /* Views */,
 				72DC55E82BC9AAD10038C24A /* Helpers */,
 				72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */,
 				72DC55B42BC96AF90038C24A /* ContentView.swift */,
+				72024D852BCA4E970032F6C0 /* SharedViewModel.swift */,
 				72DC55B82BC96AFB0038C24A /* Assets.xcassets */,
 				72DC55BA2BC96AFB0038C24A /* Preview Content */,
 			);
@@ -113,7 +156,9 @@
 		72DC55BA2BC96AFB0038C24A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				72024DCE2BCA5FB40032F6C0 /* AttractionList.json */,
 				72DC55BB2BC96AFB0038C24A /* Preview Assets.xcassets */,
+				72024DD02BCA610F0032F6C0 /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -148,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				72DC55E22BC993E50038C24A /* ExploreView.swift */,
+				72024D872BCA52230032F6C0 /* AttractionListView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -164,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				72DC55E62BC9AACB0038C24A /* BottomSheetHelper.swift */,
+				72024DD82BCA916F0032F6C0 /* JSONSchemaSupport.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -184,6 +231,8 @@
 			dependencies = (
 			);
 			name = taiwan_gogo;
+			packageProductDependencies = (
+			);
 			productName = taiwan_gogo;
 			productReference = 72DC55AF2BC96AF90038C24A /* taiwan_gogo.app */;
 			productType = "com.apple.product-type.application";
@@ -256,6 +305,8 @@
 				Base,
 			);
 			mainGroup = 72DC55A62BC96AF90038C24A;
+			packageReferences = (
+			);
 			productRefGroup = 72DC55B02BC96AF90038C24A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72DC55BC2BC96AFB0038C24A /* Preview Assets.xcassets in Resources */,
+				72024DCF2BCA5FB40032F6C0 /* AttractionList.json in Resources */,
 				72DC55B92BC96AFB0038C24A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,11 +350,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72024DE32BCA916F0032F6C0 /* MOTCImage.swift in Sources */,
+				72024DE12BCA916F0032F6C0 /* JSONSchemaSupport.swift in Sources */,
+				72024DD12BCA610F0032F6C0 /* PreviewData.swift in Sources */,
 				72DC55B52BC96AF90038C24A /* ContentView.swift in Sources */,
 				72DC55E32BC993E50038C24A /* ExploreView.swift in Sources */,
 				72DC55E72BC9AACB0038C24A /* BottomSheetHelper.swift in Sources */,
+				72024D882BCA52230032F6C0 /* AttractionListView.swift in Sources */,
+				72024DE02BCA916F0032F6C0 /* MOTCOrganization.swift in Sources */,
+				72024DDE2BCA916F0032F6C0 /* MOTCTelephone.swift in Sources */,
 				72DC55E52BC993FC0038C24A /* JourneyView.swift in Sources */,
+				72024DDC2BCA916F0032F6C0 /* MOTCAttractionResponse.swift in Sources */,
 				72DC55B32BC96AF90038C24A /* taiwan_gogoApp.swift in Sources */,
+				72024DE22BCA916F0032F6C0 /* MOTCAttraction.swift in Sources */,
+				72024DDD2BCA916F0032F6C0 /* MOTCPostalAddress.swift in Sources */,
+				72024D862BCA4E970032F6C0 /* SharedViewModel.swift in Sources */,
+				72024DDF2BCA916F0032F6C0 /* MOTCSocialMediaURL.swift in Sources */,
+				72024DDB2BCA916F0032F6C0 /* MOTCLocatedCity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,11 +533,13 @@
 				DEVELOPMENT_TEAM = P39JQ9N7WQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "我們需要使用你的位置來提供你附近的景點資料。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,11 +564,13 @@
 				DEVELOPMENT_TEAM = P39JQ9N7WQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "我們需要使用你的位置來提供你附近的景點資料。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
