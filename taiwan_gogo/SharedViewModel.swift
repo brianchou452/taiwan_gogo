@@ -8,31 +8,57 @@
 import _MapKit_SwiftUI
 import Foundation
 
+@MainActor
 class SharedViewModel: ObservableObject {
-    var attractionResponse: MOTCAttractionResponse?
-    @Published var attractions: [MOTCAttraction] = []
-    @Published var userPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+    private var attractions: [MOTCAttraction] = []
     @Published var filteredAttractions: [MOTCAttraction] = []
+    private var events: [MOTCEvent] = []
+    @Published var filteredEvents: [MOTCEvent] = []
+
+    private var pois: [PointOfInterest] = []
+    @Published var filteredPOI: [PointOfInterest] = []
+
+    @Published var userPosition: MapCameraPosition = .userLocation(fallback: .automatic)
     @Published var visibleRegion: MKCoordinateRegion?
 
+    private let api = MOTCApiManager.shared
+
     func getAttractions() {
-        // TODO: 改成呼叫API
         Task {
-            await PreviewData.loadJson(name: "AttractionList") { [weak self] (response: MOTCAttractionResponse?) in
-                DispatchQueue.main.sync { [weak self] in
-                    self?.attractionResponse = response
-                    self?.attractions = response?.attractions ?? []
-                }
+            do {
+                attractions = try await api.getAttractions()
+                pois.append(contentsOf:
+                    attractions.map { attraction -> PointOfInterest in
+                        PointOfInterest(type: .attraction, positionLat: attraction.positionLat ?? 0, positionLon: attraction.positionLon ?? 0, attraction: attraction)
+                    }
+                )
+            } catch {
+                print("載入景點時發生錯誤 \(error)")
             }
         }
     }
 
-    func updateAttractionsWithUserLocation() {
-        filteredAttractions = attractions.filter {
-            self.isPointInRegion(longitude: $0.positionLon ?? 0, latitude: $0.positionLat ?? 0)
+    func getEvents() {
+        Task {
+            do {
+                events = try await api.getEvents()
+                pois.append(contentsOf:
+                    events.map { event -> PointOfInterest in
+                        PointOfInterest(type: .event, positionLat: event.positionLat ?? 0, positionLon: event.positionLon ?? 0, event: event)
+                    }
+                )
+            } catch {
+                print("載入活動時發生錯誤 \(error)")
+            }
+        }
+    }
+
+    func updatePointOfInterestWithUserLocation() {
+        filteredPOI = pois.filter {
+            self.isPointInRegion(longitude: $0.positionLon, latitude: $0.positionLat)
         }
         print("updateAttractionsWithUserLocation")
-        print("\(filteredAttractions.count)")
+        print("\(filteredPOI.count)")
     }
 
     /// 檢查輸入的經緯度是否在目前地圖的範圍內

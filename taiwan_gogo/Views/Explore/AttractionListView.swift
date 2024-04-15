@@ -15,8 +15,8 @@ struct AttractionListView: View {
         NavigationStack {
             ScrollView(.vertical) {
                 LazyVStack(alignment: .leading, spacing: 10) {
-                    ForEach(viewModel.filteredAttractions.indices, id: \.self) { index in
-                        AttractionItemView(item: $viewModel.filteredAttractions[index])
+                    ForEach(viewModel.filteredPOI.indices, id: \.self) { index in
+                        AttractionItemView(item: $viewModel.filteredPOI[index])
                     }
                 }
                 .padding()
@@ -27,21 +27,22 @@ struct AttractionListView: View {
 
 struct AttractionItemView: View {
     @Environment(\.modelContext) var modelContext
-    @Binding var item: MOTCAttraction
+    @Binding var item: PointOfInterest
     @Query private var trips: [Trip]
     @State private var tripSelection: Int = 0
 
     var body: some View {
         HStack(alignment: .center) {
             NavigationLink(destination: AttractionDetailView(item: $item)) {
-                RemoteImageView(url: item.images?.first?.url)
+                RemoteImageView(url: item.getImages().first?.url)
                     .scaledToFill()
                     .frame(width: 118, height: 118)
                     .mask {
                         RoundedRectangle(cornerRadius: 8)
                     }
-                Text(item.attractionName ?? "")
+                Text(item.getName())
                     .font(.title2)
+                    .lineLimit(2)
                     .truncationMode(.tail)
                 Spacer()
             }
@@ -62,16 +63,14 @@ struct AttractionItemView: View {
         }
     }
 
-    func addTripAttraction(trip: Trip, attraction: MOTCAttraction) {
+    func addTripAttraction(trip: Trip, attraction: PointOfInterest) {
         trip.attractions.append(
-            Attraction(
-                name: attraction.attractionName ?? "",
-                visitDuration: .zero,
+            UserPOI(
+                name: attraction.getName(),
+                visitDuration: 0,
                 dayOfTrip: 0,
                 priority: 0,
-                motcAttractionID: attraction.attractionID ?? "",
-                positionLat: attraction.positionLat ?? 0,
-                positionLon: attraction.positionLon ?? 0))
+                details: attraction))
     }
 }
 

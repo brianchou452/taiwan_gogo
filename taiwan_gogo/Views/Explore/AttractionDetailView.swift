@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AttractionDetailView: View {
-    @Binding var item: MOTCAttraction
+    @Binding var item: PointOfInterest
 
     var body: some View {
         VStack(alignment: .leading) {
             ScrollView(.vertical) {
-                if item.images?.count ?? 0 > 0 {
+                if item.getImages().count > 0 {
                     TabView {
-                        ForEach(item.images ?? [], id: \.url) { image in
+                        ForEach(item.getImages(), id: \.url) { image in
                             RemoteImageView(url: image.url)
                                 .aspectRatio(contentMode: .fill)
                         }
@@ -25,27 +25,52 @@ struct AttractionDetailView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(item.attractionName ?? "")
+                    Text(item.getName())
                         .font(.title)
                         .fontWeight(.bold)
+                    switch item.type {
+                    case .attraction:
+                        Text("詳細資訊")
+                            .font(.headline)
+                        Text(item.attraction?.sightsDescription ?? "無資料")
+                            .font(.caption)
 
-                    Text("詳細資訊")
-                        .font(.headline)
-                    Text(item.description ?? "無資料")
-                        .font(.caption)
+                        Text("交通資訊")
+                            .font(.headline)
+                        Text(item.attraction?.trafficInfo ?? "無資料")
+                            .font(.caption)
 
-                    Text("交通資訊")
-                        .font(.headline)
-                    Text(item.trafficInfo ?? "無資料")
-                        .font(.caption)
+                        Text("聯絡電話")
+                            .font(.headline)
+                        Text(item.attraction?.telephones?.first?.tel ?? "無資料")
+                            .font(.caption)
 
-                    Text("聯絡電話")
-                        .font(.headline)
-                    Text(item.telephones?.first?.tel ?? "無資料")
-                        .font(.caption)
+                        Text("最後更新時間：\(item.attraction?.updateTime?.formatted() ?? "")")
+                            .font(.footnote)
 
-                    Text("最後更新時間：\(item.updateTime?.formatted() ?? "")")
-                        .font(.footnote)
+                    case .event:
+                        Text("詳細資訊")
+                            .font(.headline)
+                        Text(item.event?.eventDescription ?? "無資料")
+                            .font(.caption)
+
+                        Text("時間")
+                            .font(.headline)
+                        Text("\(item.event?.startDateTime?.formatted() ?? "") ~ \(item.event?.endDateTime?.formatted() ?? "")")
+                            .font(.caption)
+
+                        Text("交通資訊")
+                            .font(.headline)
+                        Text(item.event?.trafficInfo ?? "無資料")
+
+                        Text("聯絡電話")
+                            .font(.headline)
+                        Text(item.event?.telephones?.first?.tel ?? "無資料")
+                            .font(.caption)
+
+                        Text("最後更新時間：\(item.event?.updateTime?.formatted() ?? "")")
+                            .font(.footnote)
+                    }
                 }
                 .padding()
             }

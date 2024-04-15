@@ -8,14 +8,14 @@ import Foundation
 // MARK: - MOTCSocialMediaURL
 struct MOTCSocialMediaURL: Codable {
     let name: String?
-    let description: String?
+    let socialMediaDescription: String?
     let url: String?
-    let keywords: [JSONAny]?
-    let tags: [JSONAny]?
+    let keywords: [String]?
+    let tags: [String]?
 
     enum CodingKeys: String, CodingKey {
         case name = "Name"
-        case description = "Description"
+        case socialMediaDescription = "Description"
         case url = "URL"
         case keywords = "Keywords"
         case tags = "Tags"

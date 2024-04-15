@@ -9,13 +9,13 @@ import Foundation
 struct MOTCOrganization: Codable {
     let name: String?
     let organizationClass: String?
-    let taxCode: JSONNull?
+    let taxCode: String? /// 組織單位之統一編號
     let agencyCode: String?
-    let url: JSONNull?
-    let telephones: JSONNull?
-    let mobilePhones: JSONNull?
-    let faxes: JSONNull?
-    let email: JSONNull?
+    let url: String?
+    let telephones: [String]?
+    let mobilePhones: [String]?
+    let faxes: [String]? /// 傳真電話
+    let email: String?
 
     enum CodingKeys: String, CodingKey {
         case name = "Name"

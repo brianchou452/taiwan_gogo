@@ -14,9 +14,9 @@ class Trip {
     var details: String
     var date: Date
     var tripDays: Int
-    @Relationship(deleteRule: .cascade) var attractions = [Attraction]()
+    @Relationship(deleteRule: .cascade) var attractions = [UserPOI]()
 
-    init(name: String = "", details: String = "", date: Date = .now, tripDays: Int = 1, attractions: [Attraction] = [Attraction]()) {
+    init(name: String = "", details: String = "", date: Date = .now, tripDays: Int = 1, attractions: [UserPOI] = [UserPOI]()) {
         self.name = name
         self.details = details
         self.date = date

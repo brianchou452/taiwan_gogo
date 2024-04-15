@@ -10,10 +10,10 @@ struct MOTCAttraction: Codable {
     let attractionID: String?
     let attractionName: String?
     let alternateNames: [String]?
-    let description: String?
+    let sightsDescription: String?
     let positionLat: Double?
     let positionLon: Double?
-    let geometry: JSONNull?
+    let geometry: String?  /// 描述面形空間資料，以字串儲存面形、多重面形，資料型態為 WKT 格式之 Polygon 或 Multi Polygon。
     let attractionClasses: [Int]?
     let postalAddress: MOTCPostalAddress?
     let telephones: [MOTCTelephone]?
@@ -22,12 +22,12 @@ struct MOTCAttraction: Codable {
     let serviceTimeInfo: String?
     let trafficInfo: String?
     let parkingInfo: String?
-    let facilities: [JSONAny]?
+    let facilities: [String]?
     let serviceStatus: Int?
     let isPublicAccess: Int?
     let isAccessibleForFree: Int?
     let feeInfo: String?
-    let paymentMethods: [JSONAny]?
+    let paymentMethods: [String]?
     let locatedCities: [MOTCLocatedCity]?
     let websiteURL: String?
     let reservationURLs: [String]?
@@ -36,8 +36,8 @@ struct MOTCAttraction: Codable {
     let socialMediaURLs: [MOTCSocialMediaURL]?
     let visitDuration: Int?
     let assetsClass: Int?
-    let subAttractions: [JSONAny]?
-    let partOfAttraction: JSONNull?
+    let subAttractions: [String]?
+    let partOfAttraction: String? /// 描述景點屬於子景點時，填寫其歸屬之主景點/景區資訊
     let remarks: String?
     let updateTime: Date?
 
@@ -45,7 +45,7 @@ struct MOTCAttraction: Codable {
         case attractionID = "AttractionID"
         case attractionName = "AttractionName"
         case alternateNames = "AlternateNames"
-        case description = "Description"
+        case sightsDescription = "Description"
         case positionLat = "PositionLat"
         case positionLon = "PositionLon"
         case geometry = "Geometry"

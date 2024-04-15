@@ -14,11 +14,18 @@ struct ExploreView: View {
     var body: some View {
         Map(position: $viewModel.userPosition) {
             UserAnnotation()
-            if $viewModel.filteredAttractions.count < 500 {
-                ForEach(viewModel.filteredAttractions, id: \.attractionID) { attraction in
-                    Marker(attraction.attractionName ?? "",
-                           coordinate: CLLocationCoordinate2D(latitude: attraction.positionLat ?? 0, longitude: attraction.positionLon ?? 0))
-                        .tint(.orange)
+            if $viewModel.filteredPOI.count < 500 {
+                ForEach(viewModel.filteredPOI) { poi in
+                    switch poi.type {
+                    case .attraction:
+                        Marker(poi.attraction?.attractionName ?? "",
+                               coordinate: CLLocationCoordinate2D(latitude: poi.positionLat, longitude: poi.positionLon))
+                            .tint(.orange)
+                    case .event:
+                        Marker(poi.event?.eventName ?? "",
+                               coordinate: CLLocationCoordinate2D(latitude: poi.positionLat, longitude: poi.positionLon))
+                            .tint(.indigo)
+                    }
                 }
             }
         }
@@ -29,10 +36,11 @@ struct ExploreView: View {
         }
         .onAppear {
             viewModel.getAttractions()
+            viewModel.getEvents()
         }
         .onMapCameraChange { context in
             viewModel.visibleRegion = context.region
-            viewModel.updateAttractionsWithUserLocation()
+            viewModel.updatePointOfInterestWithUserLocation()
         }
     }
 }

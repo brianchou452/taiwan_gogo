@@ -8,15 +8,15 @@ import Foundation
 // MARK: - MOTCImage
 struct MOTCImage: Codable {
     let name: String?
-    let description: String?
+    let imageDescription: String?
     let url: String?
     let width: Int?
     let height: Int?
-    let keywords: [JSONAny]?
+    let keywords: [String]?
 
     enum CodingKeys: String, CodingKey {
         case name = "Name"
-        case description = "Description"
+        case imageDescription = "Description"
         case url = "URL"
         case width = "Width"
         case height = "Height"
