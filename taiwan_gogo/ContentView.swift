@@ -37,6 +37,14 @@ struct ContentView: View {
         }
         .onChange(of: selectedTab) {
             print("selected tab \(selectedTab)")
+            switch selectedTab {
+            case 1:
+                showSheet = true
+            case 2:
+                showSheet = false
+            default:
+                showSheet = true
+            }
         }
         .sheet(isPresented: $showSheet) {
             VStack(alignment: .leading) {
@@ -51,7 +59,7 @@ struct ContentView: View {
                     Text("Error")
                 }
             }
-            .presentationDetents([.height(60), .medium, .large])
+            .presentationDetents([.height(100), .medium, .fraction(0.99)])
             .presentationCornerRadius(20)
             .presentationBackgroundInteraction(.enabled)
             .interactiveDismissDisabled()

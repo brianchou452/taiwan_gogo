@@ -14,5 +14,6 @@ struct taiwan_gogoApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Trip.self)
     }
 }

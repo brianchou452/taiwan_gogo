@@ -5,6 +5,7 @@
 //  Created by Brian Chou on 2024/4/13.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AttractionListView: View {
@@ -25,11 +26,14 @@ struct AttractionListView: View {
 }
 
 struct AttractionItemView: View {
+    @Environment(\.modelContext) var modelContext
     @Binding var item: MOTCAttraction
+    @Query private var trips: [Trip]
+    @State private var tripSelection: Int = 0
 
     var body: some View {
-        NavigationLink(destination: AttractionDetailView(item: $item)) {
-            HStack(alignment: .center) {
+        HStack(alignment: .center) {
+            NavigationLink(destination: AttractionDetailView(item: $item)) {
                 RemoteImageView(url: item.images?.first?.url)
                     .scaledToFill()
                     .frame(width: 118, height: 118)
@@ -39,9 +43,35 @@ struct AttractionItemView: View {
                 Text(item.attractionName ?? "")
                     .font(.title2)
                     .truncationMode(.tail)
+                Spacer()
             }
+            .buttonStyle(PlainButtonStyle())
+            Menu {
+                ForEach(trips) { trip in
+                    Button {
+                        addTripAttraction(trip: trip, attraction: item)
+                    } label: {
+                        Text(trip.name)
+                    }
+                }
+            } label: {
+                Image(systemName: "tray.and.arrow.down")
+            }
+            .buttonStyle(PlainButtonStyle())
+            .padding()
         }
-        .buttonStyle(PlainButtonStyle())
+    }
+
+    func addTripAttraction(trip: Trip, attraction: MOTCAttraction) {
+        trip.attractions.append(
+            Attraction(
+                name: attraction.attractionName ?? "",
+                visitDuration: .zero,
+                dayOfTrip: 0,
+                priority: 0,
+                motcAttractionID: attraction.attractionID ?? "",
+                positionLat: attraction.positionLat ?? 0,
+                positionLon: attraction.positionLon ?? 0))
     }
 }
 

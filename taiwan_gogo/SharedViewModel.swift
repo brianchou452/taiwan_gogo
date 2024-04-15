@@ -15,14 +15,6 @@ class SharedViewModel: ObservableObject {
     @Published var filteredAttractions: [MOTCAttraction] = []
     @Published var visibleRegion: MKCoordinateRegion?
 
-    actor AttractionResponseActor {
-        var AttractionResponse = MOTCAttractionResponse?.self
-
-        func setResponse(newData: MOTCAttractionResponse?.Type) {
-            AttractionResponse = newData
-        }
-    }
-
     func getAttractions() {
         // TODO: 改成呼叫API
         Task {
