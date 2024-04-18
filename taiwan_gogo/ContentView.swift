@@ -36,7 +36,6 @@ struct ContentView: View {
             showSheet = true
         }
         .onChange(of: selectedTab) {
-            print("selected tab \(selectedTab)")
             switch selectedTab {
             case 1:
                 showSheet = true

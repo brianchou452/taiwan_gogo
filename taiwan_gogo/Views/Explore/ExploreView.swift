@@ -13,7 +13,9 @@ struct ExploreView: View {
 
     var body: some View {
         Map(position: $viewModel.userPosition) {
-            UserAnnotation()
+            if $viewModel.authorisationStatus.wrappedValue == .authorizedWhenInUse {
+                UserAnnotation()
+            }
             if $viewModel.filteredPOI.count < 500 {
                 ForEach(viewModel.filteredPOI) { poi in
                     switch poi.type {
@@ -31,13 +33,14 @@ struct ExploreView: View {
         }
         .mapControlVisibility(.automatic)
         .mapControls {
-            MapUserLocationButton()
+            if $viewModel.authorisationStatus.wrappedValue == .authorizedWhenInUse {
+                MapUserLocationButton()
+            }
             MapPitchToggle()
         }
         .onAppear {
             viewModel.getAttractions()
             viewModel.getEvents()
-            viewModel.requestLocationAuthorisation()
         }
         .onMapCameraChange { context in
             viewModel.visibleRegion = context.region

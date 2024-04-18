@@ -9,7 +9,7 @@ import _MapKit_SwiftUI
 import Foundation
 
 @MainActor
-class SharedViewModel: ObservableObject {
+class SharedViewModel: NSObject, ObservableObject {
     private var attractions: [MOTCAttraction] = []
     @Published var filteredAttractions: [MOTCAttraction] = []
     private var events: [MOTCEvent] = []
@@ -18,11 +18,18 @@ class SharedViewModel: ObservableObject {
     private var pois: [PointOfInterest] = []
     @Published var filteredPOI: [PointOfInterest] = []
 
-    @Published var userPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+    @Published var userPosition: MapCameraPosition = .automatic
     @Published var visibleRegion: MKCoordinateRegion?
 
     private let api = MOTCApiManager.shared
     private let locationManager = CLLocationManager()
+
+    @Published var authorisationStatus: CLAuthorizationStatus = .notDetermined
+
+    override init() {
+        super.init()
+        locationManager.delegate = self
+    }
 
     func getAttractions() {
         Task {
@@ -58,8 +65,6 @@ class SharedViewModel: ObservableObject {
         filteredPOI = pois.filter {
             self.isPointInRegion(longitude: $0.positionLon, latitude: $0.positionLat)
         }
-        print("updateAttractionsWithUserLocation")
-        print("\(filteredPOI.count)")
     }
 
     /// 檢查輸入的經緯度是否在目前地圖的範圍內
@@ -84,8 +89,17 @@ class SharedViewModel: ObservableObject {
         }
         return false
     }
+}
 
-    public func requestLocationAuthorisation() {
-        locationManager.requestWhenInUseAuthorization()
+extension SharedViewModel: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        authorisationStatus = manager.authorizationStatus
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            userPosition = .userLocation(fallback: .automatic)
+        default: break
+        }
     }
 }
