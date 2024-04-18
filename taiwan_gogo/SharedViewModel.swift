@@ -7,6 +7,7 @@
 
 import _MapKit_SwiftUI
 import Foundation
+import OSLog
 
 @MainActor
 class SharedViewModel: NSObject, ObservableObject {
@@ -23,8 +24,9 @@ class SharedViewModel: NSObject, ObservableObject {
 
     private let api = MOTCApiManager.shared
     private let locationManager = CLLocationManager()
-
     @Published var authorisationStatus: CLAuthorizationStatus = .notDetermined
+
+    private let logger = Logger()
 
     override init() {
         super.init()
@@ -41,7 +43,7 @@ class SharedViewModel: NSObject, ObservableObject {
                     }
                 )
             } catch {
-                print("載入景點時發生錯誤 \(error)")
+                logger.warning("載入景點時發生錯誤 \(error)")
             }
         }
     }
@@ -56,7 +58,7 @@ class SharedViewModel: NSObject, ObservableObject {
                     }
                 )
             } catch {
-                print("載入活動時發生錯誤 \(error)")
+                logger.warning("載入活動時發生錯誤 \(error)")
             }
         }
     }

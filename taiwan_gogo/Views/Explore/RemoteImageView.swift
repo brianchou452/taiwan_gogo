@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Kingfisher
+import OSLog
+
+private let logger = Logger()
 
 struct RemoteImageView: View {
     var url: URL?
@@ -26,7 +29,7 @@ struct RemoteImageView: View {
                 ProgressView()
             }
             .onFailure { error in
-                print("error : \(error)")
+                logger.warning("載入圖片時發生錯誤 : \(error)")
             }
             .resizable()
     }

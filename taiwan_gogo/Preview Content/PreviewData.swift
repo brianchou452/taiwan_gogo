@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import OSLog
+
+private let logger = Logger()
 
 enum PreviewData {
     static func loadJson<T: Codable>(name: String, completion: @escaping (T?) -> Void) async {
@@ -18,7 +21,7 @@ enum PreviewData {
                     let results = try decoder.decode(T.self, from: data)
                     completion(results)
                 } catch {
-                    print("error: \(error)")
+                    logger.error("解析json時發生錯誤: \(error)")
                     completion(nil)
                 }
             } else {
