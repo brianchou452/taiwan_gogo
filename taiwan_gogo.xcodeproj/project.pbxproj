@@ -32,6 +32,7 @@
 		72024E032BCD52B60032F6C0 /* MOTCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024E012BCD52B60032F6C0 /* MOTCEvent.swift */; };
 		72024E042BCD52B70032F6C0 /* MOTCEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024E022BCD52B60032F6C0 /* MOTCEventResponse.swift */; };
 		72024E062BCD60A40032F6C0 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024E052BCD60A40032F6C0 /* PointOfInterest.swift */; };
+		72024E0B2BCFC8E10032F6C0 /* AttractionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72024E0A2BCFC8E10032F6C0 /* AttractionItemView.swift */; };
 		72DC55B32BC96AF90038C24A /* taiwan_gogoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */; };
 		72DC55B52BC96AF90038C24A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC55B42BC96AF90038C24A /* ContentView.swift */; };
 		72DC55B92BC96AFB0038C24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72DC55B82BC96AFB0038C24A /* Assets.xcassets */; };
@@ -86,6 +87,8 @@
 		72024E012BCD52B60032F6C0 /* MOTCEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCEvent.swift; sourceTree = "<group>"; };
 		72024E022BCD52B60032F6C0 /* MOTCEventResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOTCEventResponse.swift; sourceTree = "<group>"; };
 		72024E052BCD60A40032F6C0 /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		72024E082BCFC2CE0032F6C0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		72024E0A2BCFC8E10032F6C0 /* AttractionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionItemView.swift; sourceTree = "<group>"; };
 		72DC55AF2BC96AF90038C24A /* taiwan_gogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taiwan_gogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DC55B22BC96AF90038C24A /* taiwan_gogoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taiwan_gogoApp.swift; sourceTree = "<group>"; };
 		72DC55B42BC96AF90038C24A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,12 +174,21 @@
 			path = MOTCApi;
 			sourceTree = "<group>";
 		};
+		72024E092BCFC89C0032F6C0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				72024E0A2BCFC8E10032F6C0 /* AttractionItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		72DC55A62BC96AF90038C24A = {
 			isa = PBXGroup;
 			children = (
 				72DC55B12BC96AF90038C24A /* taiwan_gogo */,
 				72DC55C42BC96AFB0038C24A /* taiwan_gogoTests */,
 				72DC55CE2BC96AFB0038C24A /* taiwan_gogoUITests */,
+				72024E082BCFC2CE0032F6C0 /* README.md */,
 				72DC55B02BC96AF90038C24A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				72DC55DF2BC992AC0038C24A /* Views */,
+				72024E092BCFC89C0032F6C0 /* Components */,
 				72024D682BCA3A370032F6C0 /* Models */,
 				72DC55E82BC9AAD10038C24A /* Helpers */,
 				72024DF92BCD24070032F6C0 /* Manager */,
@@ -437,6 +450,7 @@
 				72024E032BCD52B60032F6C0 /* MOTCEvent.swift in Sources */,
 				72024D862BCA4E970032F6C0 /* SharedViewModel.swift in Sources */,
 				72024DDF2BCA916F0032F6C0 /* MOTCSocialMediaURL.swift in Sources */,
+				72024E0B2BCFC8E10032F6C0 /* AttractionItemView.swift in Sources */,
 				72024DF02BCC16640032F6C0 /* RemoteImageView.swift in Sources */,
 				72024DDB2BCA916F0032F6C0 /* MOTCLocatedCity.swift in Sources */,
 			);

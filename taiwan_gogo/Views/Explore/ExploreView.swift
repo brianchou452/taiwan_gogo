@@ -18,11 +18,11 @@ struct ExploreView: View {
                 ForEach(viewModel.filteredPOI) { poi in
                     switch poi.type {
                     case .attraction:
-                        Marker(poi.attraction?.attractionName ?? "",
+                        Marker(poi.name,
                                coordinate: CLLocationCoordinate2D(latitude: poi.positionLat, longitude: poi.positionLon))
                             .tint(.orange)
                     case .event:
-                        Marker(poi.event?.eventName ?? "",
+                        Marker(poi.name,
                                coordinate: CLLocationCoordinate2D(latitude: poi.positionLat, longitude: poi.positionLon))
                             .tint(.indigo)
                     }

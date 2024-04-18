@@ -48,6 +48,7 @@ extension MOTCApiManager {
     }
 }
 
+// MARK: API endpoint
 extension MOTCApiManager {
     enum Endpoint {
         case attractions

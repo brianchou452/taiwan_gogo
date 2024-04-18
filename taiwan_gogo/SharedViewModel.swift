@@ -29,7 +29,7 @@ class SharedViewModel: ObservableObject {
                 attractions = try await api.getAttractions()
                 pois.append(contentsOf:
                     attractions.map { attraction -> PointOfInterest in
-                        PointOfInterest(type: .attraction, positionLat: attraction.positionLat ?? 0, positionLon: attraction.positionLon ?? 0, attraction: attraction)
+                        PointOfInterest(attraction: attraction)
                     }
                 )
             } catch {
@@ -44,7 +44,7 @@ class SharedViewModel: ObservableObject {
                 events = try await api.getEvents()
                 pois.append(contentsOf:
                     events.map { event -> PointOfInterest in
-                        PointOfInterest(type: .event, positionLat: event.positionLat ?? 0, positionLon: event.positionLon ?? 0, event: event)
+                        PointOfInterest(event: event)
                     }
                 )
             } catch {

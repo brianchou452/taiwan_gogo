@@ -13,7 +13,7 @@ struct JourneyView: View {
     @EnvironmentObject var viewModel: SharedViewModel
     
     @State private var path = [Trip]()
-    @State private var sortOrder = SortDescriptor(\Trip.name)
+    @State private var sortOrder = SortDescriptor(\Trip.date)
     @State private var searchText = ""
     
     var body: some View {
