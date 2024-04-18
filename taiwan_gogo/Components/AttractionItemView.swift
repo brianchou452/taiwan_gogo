@@ -11,8 +11,6 @@ import SwiftUI
 struct AttractionItemView: View {
     @Environment(\.modelContext) var modelContext
     @Query private var trips: [Trip]
-    @Query private var pois: [PointOfInterest]
-    @State private var tripSelection: Int = 0
 
     @Binding var item: PointOfInterest
     var isShowAddToTripBtn: Bool
@@ -48,6 +46,9 @@ struct AttractionItemView: View {
                 } label: {
                     Text(trip.name)
                 }
+            }
+            if trips.count == 0 {
+                Text("請先至行程分頁新增一個新旅程")
             }
         } label: {
             Image(systemName: "tray.and.arrow.down")
