@@ -22,6 +22,7 @@ class SharedViewModel: ObservableObject {
     @Published var visibleRegion: MKCoordinateRegion?
 
     private let api = MOTCApiManager.shared
+    private let locationManager = CLLocationManager()
 
     func getAttractions() {
         Task {
@@ -82,5 +83,9 @@ class SharedViewModel: ObservableObject {
             return true
         }
         return false
+    }
+
+    public func requestLocationAuthorisation() {
+        locationManager.requestWhenInUseAuthorization()
     }
 }

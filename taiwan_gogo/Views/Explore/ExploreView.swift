@@ -37,6 +37,7 @@ struct ExploreView: View {
         .onAppear {
             viewModel.getAttractions()
             viewModel.getEvents()
+            viewModel.requestLocationAuthorisation()
         }
         .onMapCameraChange { context in
             viewModel.visibleRegion = context.region
